@@ -1,0 +1,8 @@
+1. Enter the corresponding directory
+2. Type the following in the terminal:
+
+ heroku login
+ heroku git:remote -a "thealldictionaries"
+ git add .
+ git commit -am "Whatever u want to say"
+ git push heroku HEAD:master

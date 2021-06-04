@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+  <br>
+  <br>
+  <h1>Welcome to Sentence Typing Challenge!</h1>
+  <br>
+  <h5>The quotes have been extracted from <a href="https://type.fit/api/quotes">https://type.fit/api/quotes</a></h5>
+  <h5>Enter the quote shown within <strong>12</strong> seconds.</h5>
+  <h5>Note: Copying and pasting is automatically disabled by the system.</h5>
+  <br>
+  <h5>You can submit your score to the server, but only the highest score will be saved in the server.</h5>
+  <h5>To submit your score, click the submit button after the game is over. You shall not click the restart button.</h5>
+  <h5>See the full ranking <a href="{{ url_for('sentenceRank') }}">here</a>.</h5>
+  <div class="row">
+    <div class="mx-auto">
+      <button type="button" class="btn btn-outline-danger btn-xs" id="start"
+        onclick="beginSentenceTyping()">Start</button>
+      <i>
+        <h2 id="currentQuote"></h2>
+      </i>
+      <input type="text" class="form-control" placeholder="Enter the quote here.." id="typedQuote" name="typedQuote"
+        onselectstart="return false" onPaste="return false" onCopy="return false" onCut="return false"
+        onDrag="return false" onDrop="return false">
+      <br>
+      <br>
+      <h5 id="aboutTime"><strong>Time remaining: <span id="timeRemaining">0</span> seconds</strong></h5>
+      <form method='POST' action="{{ url_for('sentenceTypingChallenge') }}">
+        <h5 name="aboutScore" id="aboutScore"><strong>Score:
+            <span class="currentScore" name="currentScore" id="currentScore">{{score}}</strong></span>
+          <button type="button" style='margin:5px;' class="btn btn-outline-danger btn-xs" id="restart" name="restart"
+            onclick="window.location.reload()">Restart</button>
+          <button class="btn btn-xs btn-outline-primary" style="margin:5px;" type="submit" name="scoreSubmit"
+            id="scoreSubmit">Submit</button>
+        </h5>
+      </form>
+      <h5 id="gameLevel"></h5>
+      <h5 id="gameStatus"></h5>
+      <br>
+    </div>
+  </div>
+
+  <hr>
+  <div>
+    <h4><u>Levels for each score</u></h4>
+    <span style="color: #eb4841"> Beginner: 0 - 10 </span>
+    <br>
+    <span style="color: #FF7F50"> Novice: 11 - 20 </span>
+    <br>
+    <span style="color: #DD9B00"> Intermediate: 20 - 30 </span>
+    <br>
+    <span style="color: #98af07"> Fast: 31 - 40 </span>
+    <br>
+    <span style="color: #4cc35c"> Professional: 41 - 50 </span>
+    <br>
+    <span style="color: #20C0B0"> Expert: 51 - 60 </span>
+    <br>
+    <span style="color: #6495ED"> Master: 61 - 70 </span>
+    <br>
+    <span style="color: #6363B0"> Grand Master: 71 - 80 </span>
+    <br>
+    <span style="color: #AA62B0"> Enlightened: 81 or above </span>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="{{ url_for('static', filename='assets/js/sentenceTypingChallenge.js') }}"></script>
+{%endblock%}
