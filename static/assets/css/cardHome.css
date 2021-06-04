@@ -1,0 +1,131 @@
+.image {
+  width: 115px;
+  height: 150px;
+  margin: 2px;
+  object-fit: contain;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.searchContainer {
+  height: 40vh;
+}
+
+.searchBox {
+  margin-top: 15vh;
+}
+
+.dictionaries {
+  margin-top: 10vh;
+}
+ /* 여기서부턴 카드 탭 css */
+
+/* .cardHome {
+  text-align: right;
+  
+} */
+.main_content {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+
+/* From here cardHome */
+/* letter: Make your Own Card! */
+#cardHome {
+  text-align: center;
+}
+
+/* 전체 윌페이퍼 */
+.card-container {
+  flex: 1;
+  height: 250vh;
+}
+
+/* Search history */
+#history_area {
+  flex: 1;
+}
+#history_title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#history_btn button{
+  display: block;
+  margin: 0 auto;
+}
+.search-group{
+  max-height: 500px;
+  overflow: auto;
+}
+@media (max-width: 992px) {
+  .main_content {
+    flex-direction: column;
+  }
+  #history_area {
+    margin-top: 100px;
+  }
+  .search-group{
+    width: 300px;
+    margin: auto;
+  }
+}
+
+/* card maker box*/
+#make_area {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#card_box {
+  display: flex;
+  flex: 1;
+}
+#inputCard{
+  display: block;
+  border: 3px solid lightgray;
+  border-radius: 30px;
+  width: 470px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#inputCard button{
+
+  position: absolute;
+  left: 170px;
+  bottom: 20px;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#inputCard button:hover{
+  color:#335eea;
+}
+
+/* plus_image setting */
+#plus_image{
+  display: block;
+  margin-top: -85px;
+}
+
+
+/* letter: card list */
+#card-list{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+

@@ -1,0 +1,214 @@
+
+.image {
+  width: 115px;
+  height: 150px;
+  margin: 2px;
+  object-fit: contain;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.searchContainer {
+  height: 40vh;
+}
+
+.searchBox {
+  margin-top: 15vh;
+}
+
+.dictionaries {
+  margin-top: 10vh;
+}
+ /* 여기서부턴 카드 탭 css */
+.cardHome {
+  text-align: right;
+  
+}
+.main_content {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+
+/* From here cardHome */
+/* letter: Make your Own Card! */
+#cardHome {
+  text-align: center;
+}
+
+/* 전체 윌페이퍼 */
+.card-container {
+  flex: 1;
+  height: 250vh;
+}
+
+/* Search history */
+#history_area {
+  flex: 1;
+}
+#history_title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#history_btn button{
+  display: block;
+  margin: 0 auto;
+}
+.search-group{
+  max-height: 500px;
+  overflow: auto;
+}
+@media (max-width: 992px) {
+  .main_content {
+    flex-direction: column;
+  }
+  #history_area {
+    margin-top: 50px;
+  }
+  .search-group{
+    width: 300px;
+    margin: auto;
+  }
+}
+
+/* card maker box*/
+#make_area {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#inputCard-wrapper{
+  width: 500px;
+  height: 550px;
+}
+
+#preview {
+  overflow: auto;
+}
+.option_wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+#imageBtn{
+  border-radius:7px;
+  color: white;
+  background-color: #335eea;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 2rem;
+  font-family: inherit;
+}
+#inputCard{
+  display: block;
+  border: 3px solid lightgray;
+  border-radius: 30px;
+  width: 500px;
+  height: 400px;
+  margin: 10px 0;
+  overflow: hidden; 
+}
+/* #dropdownMenuButton1{
+  display: block;
+  position: relative;
+  left:380px;
+  top: 45px;
+} */
+
+#inputGroupFile02{
+  position: relative;
+  margin-top: 0px;
+}
+#instruction-word{
+  color: slategray;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#instruction-pos{
+  color: slategray;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#instruction-photo{
+  color: slategray;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#instruction-video{
+  color: slategray;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#word-form-control{
+  margin-top: 0px;
+}
+#instruction{
+  color: slategray;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+#exampleFormControlTextarea1{
+  position: relative;
+  margin-top: 0px;
+  height: 120px;
+}
+
+.btn_wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+#save-btn{
+  /* position: absolute; */
+  /* top: 530px;
+  left: 280px; */
+  
+  padding-left: 3.3rem;
+  padding-right: 3.3rem;
+  font-size: 1.2rem;
+}
+#cancel-btn{
+  /* position: absolute;
+  top: 530px;
+  right: 280px; */
+ 
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  font-size: 1.2rem;
+}
+/*
+#inputCard button{
+
+  position: absolute;
+  left: 170px;
+  bottom: 20px;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#inputCard button:hover{
+  color:#335eea;
+}
+*/
+
+
+/* letter: card list */
+#card-list{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+

@@ -1,0 +1,188 @@
+.image {
+  width: 115px;
+  height: 150px;
+  margin: 2px;
+  object-fit: contain;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.searchContainer {
+  height: 40vh;
+}
+
+.searchBox {
+  margin-top: 15vh;
+}
+
+.dictionaries {
+  margin-top: 10vh;
+}
+ /* 여기서부턴 카드 탭 css */
+
+.card-container {
+  flex:1;
+  height: 250vh;
+}
+
+
+
+/* From here cardHome */
+/* letter: Make your Own Card! */
+#cardHome {
+  text-align: center;
+}
+
+/* 전체 윌페이퍼 */
+.card-container {
+  height: 250vh;
+}
+.main_content{
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+@media (max-width: 992px){
+  .main_content{
+    flex-direction: column;
+  }
+  #history_area {
+    margin-top: 100px;
+  }
+  .search-group{
+    width: 300px;
+    margin: auto;
+  }
+}
+
+/* Search history */
+#history_area{
+  flex:1;
+}
+#history_title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.search-group{
+  max-height: 500px;
+  overflow: auto;
+
+}
+.list-group{
+  width: 300px;
+  max-height: 500px;
+  overflow: auto;
+}
+#history_btn button{
+  display: block;
+  margin: 0 auto;
+}
+
+/* card maker box*/
+#inputCard-wrapper{
+  width: 500px;
+  height: 550px;
+  
+}
+#trashcan{
+  display: block;
+  position: relative;
+  left:430px;
+}
+#edit{
+  display: block;
+  position: relative;
+  left:385px;
+  top: 38px
+}
+
+#inputCard{
+  display: block;
+  border: 3px solid lightgray;
+  border-radius: 30px;
+  width: 500px;
+  height: 400px;
+  position: relative;
+  right: 0px;
+  top:0px;
+  overflow: hidden;
+}
+#make_area{
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#programming {
+  position: relative;
+  left: 85px;
+}
+#word {
+  text-align: center;
+  margin-top:10px;
+}
+#part-of-speech{
+  margin-left: 40px;
+  text-decoration: underline;
+}
+.definition {
+  text-align: center;
+}
+
+.btn_wrapper{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+#next-btn{
+  padding-left: 3.3rem;
+  padding-right: 3.3rem;
+  font-size: 1.2rem;
+}
+#prev-btn{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  font-size: 1.2rem;
+}
+/*
+#inputCard button{
+
+  position: absolute;
+  left: 170px;
+  bottom: 20px;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#inputCard button:hover{
+  color:#335eea;
+}
+*/
+/* plus_image setting */
+#plus_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+}
+
+
+
+/* letter: card list */
+#card-list{
+  margin-top: 150px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
