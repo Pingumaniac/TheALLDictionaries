@@ -98,9 +98,10 @@ class DB():
         query4 = 'DELETE FROM HasWordRanking WHERE userID = (%s)'
         query5 = 'DELETE FROM IsFriendWith WHERE userID = (%s) OR friendID = (%s)'
         query6 = 'DELETE FROM SendFriendRequest WHERE senderID = (%s) OR receiverID = (%s)'
-        query7 = 'DELETE FROM HasWordRanking WHERE userID = (%s)'
-        query8 = 'DELETE FROM UserAccount WHERE userID = (%s)'
-        query9 = 'DELETE FROM Account WHERE userID = (%s)'
+        query7 = 'DELETE FROM HasSentneceRanking WHERE userID = (%s)'
+        query8 = 'DELETE FROM HasTextRanking WHERE userID = (%s)'
+        query9 = 'DELETE FROM UserAccount WHERE userID = (%s)'
+        query10 = 'DELETE FROM Account WHERE userID = (%s)'
     
         self.cursor.execute(query1, (userID))
         self.cursor.execute(query2, (userID))
@@ -111,6 +112,7 @@ class DB():
         self.cursor.execute(query7, (userID))
         self.cursor.execute(query8, (userID))
         self.cursor.execute(query9, (userID))
+        self.cursor.execute(query10, (userID))
         self.conn.commit()
     
     def deleteAdmin(self, userID):
