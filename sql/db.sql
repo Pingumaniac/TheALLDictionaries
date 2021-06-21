@@ -108,12 +108,12 @@ CREATE TABLE IF NOT EXISTS HasTextRanking (
 );
 
 CREATE TABLE IF NOT EXISTS ChatRoom(
-	roomName VARCHAR(256),
+  roomName VARCHAR(256),
   senderID VARCHAR(50),
   receiverID VARCHAR(50),
-	chatMessage VARCHAR(10000),
-	sendDate TIMESTAMP,
-	PRIMARY KEY (roomName, senderID, sendDate),
-	FOREIGN KEY (senderID) REFERENCES Account(userID) ON DELETE NO ACTION,
+  chatMessage VARCHAR(10000),
+  sendDate TIMESTAMP,
+  PRIMARY KEY (roomName, senderID, sendDate),
+  FOREIGN KEY (senderID) REFERENCES Account(userID) ON DELETE NO ACTION,
   FOREIGN KEY (receiverID) REFERENCES Account(userID) ON DELETE NO ACTION
 );
