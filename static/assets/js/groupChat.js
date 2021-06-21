@@ -17,8 +17,6 @@ $(document).ready(function() {
         // Note that chatJson.length = pTagNumber - 1 as there is another p element in the footer.
         chatJson = JSON.parse(response);
         pTagNumber = document.getElementsByTagName("P").length;
-        console.log(chatJson)
-        console.log(pTagNumber)
         // Case: the input box for writing the message is empty
         if (chatMessageBox.value.length == 0) {
             // Case: new message has been sent from an another user or more
