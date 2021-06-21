@@ -29,13 +29,13 @@ class DB():
         self.conn.close()
         
     def executeQueryAndCommit(self):
-        self.cursor.exceute(self.query)
+        self.cursor.execute(self.query)
         self.conn.commit()
         self.query = ""
     
     def executeQueryListAndCommit(self):
         for query in self.queryList:
-            self.cursor.exceute(query)
+            self.cursor.execute(query)
         self.conn.commit()
         self.queryList = []
     
