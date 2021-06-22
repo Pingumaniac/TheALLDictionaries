@@ -15,7 +15,7 @@
 
               <!-- List -->
               <ul class="card-list list text-gray-700 mb-6">
-                <li class="list-item active"><a class="list-link text-reset" href="{{ url_for('mypage') }}">General</a></li>
+                <li class="list-item"><a class="list-link text-reset" href="{{ url_for('mypage') }}">General</a></li>
                 {% if adminStatus != 1 %}
                 <li class="list-item"><a class="list-link text-reset" href="{{ url_for('friends') }}">Friends</a></li>
                 <li class="list-item active"><a class="list-link text-reset" href="{{ url_for('gameStatus') }}">Game status</a></li>
