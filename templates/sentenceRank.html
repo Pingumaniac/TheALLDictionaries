@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+  <br />
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Sentence Typing Challenge Ranking</h1>
+      <br>
+      <h4>The ranking is based on your highest score.</h4>
+      <br>
+      <h5>You can delete your result from <a href="{{ url_for('resetSentenceRank') }}">here</a>.</h5>
+      <br>
+    </div>
+  </div>
+
+  <div class="list-group">
+    <div class="list-group-item">
+      <ol>
+        {% if sentenceRankingTable == () %}
+        <li>
+          Nobody has participated yet.
+        </li>
+        {% else %}
+        {% for sentenceRankData in sentenceRankingTable %}
+        <li>
+          <p>
+            {% if sentenceRankData[3] != None %}
+          <div class="avatar avatar-xl">
+            <img class="avatar-img rounded-circle" src="{{ sentenceRankData[3] }}" alt="..." />
+          </div>
+          {% else %}
+          <div class="avatar avatar-xl">
+            <img class="avatar-img rounded-circle" src="https://i.stack.imgur.com/34AD2.jpg" alt="..." />
+          </div>
+          {% endif %}
+
+          {{ sentenceRankData[2] }}
+          <span class="small text-truncate text-gray-700">{{ sentenceRankData[0] }}</span>
+
+          {% if sentenceRankData[1] > 80 %}
+          <span style="color: #AA62B0; float: right">
+            Level: Enlightened <br>Highest score: {{ sentenceRankData[1]}}
+          </span>
+          {% elif sentenceRankData[1] > 70 %}
+          <span style="color: #6363B0; float: right">
+            Level: Grand Master <br>Highest score: {{ sentenceRankData[1]}}
+          </span>
+          {% elif sentenceRankData[1] > 60 %}
+          <span style="color: #6495ED; float: right">
+            Level: Master <br>Highest score: {{ sentenceRankData[1] }}
+          </span>
+          {% elif sentenceRankData[1] > 50 %}
+          <span style="color: #20C0B0; float: right">
+            Level: Expert <br>Highest score: {{ sentenceRankData[1] }}
+          </span>
+          {% elif sentenceRankData[1] > 40 %}
+          <span style="color: #4cc35c; float: right">
+            Level: Professional <br>Highest score: {{ sentenceRankData[1]}}
+          </span>
+          {% elif sentenceRankData[1] > 30 %}
+          <span style="color: #98af07; float: right">
+            Level: Fast <br>Highest score: {{ sentenceRankData[1] }}
+          </span>
+          {% elif sentenceRankData[1] > 20 %}
+          <span style="color: #DD9B00; float: right">
+            Level: Intermediate <br>Highest score: {{ sentenceRankData[1]}}
+          </span>
+          {% elif sentenceRankData[1] > 10 %}
+          <span style="color: #FF7F50; float: right">
+            Level: Novice <br>Highest score: {{ sentenceRankData[1] }}
+          </span>
+          {% else %}
+          <span style="color: #eb4841; float: right">
+            Level: Beginner <br>Highest score: {{ sentenceRankData[1]}}
+          </span>
+          {% endif %}
+          </p>
+        </li>
+        {% endfor %}
+        {% endif %}
+      </ol>
+    </div>
+  </div>
+  <br>
+  <div class="control" style="text-align: center">
+    <a href="{{ url_for('sentenceTypingChallenge') }}"><input class="btn btn-primary" type="button"
+        value="Go back" /></a>
+  </div>
+</div>
+{%endblock%}
