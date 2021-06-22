@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="pt-4 pt-md-1">
+  <div class="container text-center">
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Welcome to Text Typing Challenge!</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <br>
+    <br>
+    <div class="row" style="margin-left: 2px">
+      <div class="list-group">
+        <div class="list-group-item" aria-current="true" draggable="true" id="literary">
+          <h2>Literary text typing challenges</h2>
+          <br>
+          {% if literatureTable == () %}
+          <p> There is not any literary text typing challenge created yet. </p>
+          {% else %}
+          <ol>
+            {% for literatureData in literatureTable %}
+            <li>
+              Title: <strong>{{ literatureData[1] }}</strong>
+              <a href="{{ url_for('startTextTyping', title = literatureData[1]) }}">
+                <button class="btn btn-outline-danger btn-xs" type="button" style="float:right">Load game!</button>
+              </a>
+              <br><i>Created by {{ literatureData[0] }}</i>
+            </li>
+            <br>
+            {% endfor %}
+          </ol>
+          {% endif %}
+        </div>
+        <div class="list-group-item" aria-current="true" draggable="true" id="speech">
+          <h2>Speech script typing challenges</h2>
+          <br>
+          {% if speechTable == () %}
+          <p> There is not any speech script typing challenge created yet. </p>
+          {% else %}
+          <ol>
+            {% for speechData in speechTable %}
+            <li>
+              Title: <strong>{{ speechData[1] }}</strong>
+              <a href="{{ url_for('startTextTyping', title = speechData[1]) }}">
+                <button class="btn btn-outline-danger btn-xs" type="button" style="float:right">Load game!</button>
+              </a>
+              <br><i>Created by {{ speechData[0] }}</i>
+            </li>
+            <br>
+            {% endfor %}
+          </ol>
+          {% endif %}
+        </div>
+        <div class="list-group-item" aria-current="true" draggable="true" id="law">
+          <h2>Law typing challenges</h2>
+          <br>
+          {% if lawTable == () %}
+          <p> There is not any law typing challenge created yet. </p>
+          {% else %}
+          <ol>
+            {% for lawData in lawTable %}
+            <li>
+              Title: <strong>{{ lawData[1] }}</strong>
+              <a href="{{ url_for('startTextTyping', title = lawData[1]) }}">
+                <button class="btn btn-outline-danger btn-xs" type="button" style="float:right">Load game!</button>
+              </a>
+              <br><i>Created by {{ lawData[0] }}</i>
+            </li>
+            <br>
+            {% endfor %}
+          </ol>
+          {% endif %}
+        </div>
+        <div class="list-group-item" aria-current="true" draggable="true" id="article">
+          <h2>Article typing challenges</h2>
+          <br>
+          {% if articleTable == () %}
+          <p> There is not any article typing challenge created yet. </p>
+          {% else %}
+          <ol>
+            {% for articleData in articleTable %}
+            <li>
+              Title: <strong>{{ articleData[1] }}</strong>
+              <a href="{{ url_for('startTextTyping', title = articleData[1]) }}">
+                <button class="btn btn-outline-danger btn-xs" type="button" style="float:right">Load game!</button>
+              </a>
+              <br><i>Created by {{ articleData[0] }}</i>
+            </li>
+            <br>
+            {% endfor %}
+          </ol>
+          {% endif %}
+        </div>
+        <div class="list-group-item" aria-current="true" draggable="true" id="essay">
+          <h2>Exemplar essay typing challenges</h2>
+          <br>
+          {% if essayTable == () %}
+          <p> There is not any exemplar essay typing challenge created yet. </p>
+          {% else %}
+          <ol>
+            {% for essayData in essayTable %}
+            <li>
+              Title: <strong>{{ essayData[1] }}</strong>
+              <a href="{{ url_for('startTextTyping', title = essayData[1]) }}">
+                <button class="btn btn-outline-danger btn-xs" type="button" style="float:right">Load game!</button>
+              </a>
+              <br><i>Created by {{ essayData[0] }}</i>
+            </li>
+            <br>
+            {% endfor %}
+          </ol>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Draggable -->
+<script src="{{ url_for('static', filename='assets/js/makeDraggable.js') }}"></script>
+{%endblock%}
