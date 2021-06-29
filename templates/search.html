@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section class="pt-4 pt-md-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 searchContainer">
+        <h1 class="title">The ALL Dictionary</h1>
+        <form method="post" action="{{ url_for('searchResult') }}">
+          <div class="input-group mb-3 searchBox">
+            <input type="text" class="form-control" placeholder="Search a word from 16 different sources" aria-label="search" id="word" name="word"
+              aria-describedby="button-addon2" style="border-color:#506690" />
+            <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="dictionaries">
+    <img class="image"
+      src="https://cdn.shopify.com/s/files/1/0268/6966/1879/products/Merriam-Webster_s-Advanced-Learner_s-English-Dictionary-cover_1200x1200.jpg?v=1604683866"
+      alt="Merriam Webster's Learner" draggable="true" id="mwl"/>
+    <img class="image" src="https://images-na.ssl-images-amazon.com/images/I/91AO9RCuebL._AC_SL1500_.jpg"
+      alt="Merriam Webster" draggable="true" id="mwc"/>
+    <img class="image" src="https://images-na.ssl-images-amazon.com/images/I/61b1KygZ2IL.jpg" alt="Oxford Dictionary" 
+    draggable="true" id="oxford"/>
+    <img class="image" src="http://img.tfd.com/TFDlogo1200x1200.png" alt="The Free Dictionary" draggable="true" id="free"/>
+    <img class="image" src="https://images-na.ssl-images-amazon.com/images/I/516WaHH5zdL.png" alt="Your Dictionary" 
+    draggable="true" id="your"/>
+    <img class="image" src="https://m.media-amazon.com/images/I/513dFll+EsL.jpg" alt="Urban Dictionary" draggable="true" 
+    id="urban"/>
+    <img class="image" src="https://forbeslibrary.org/wp-content/uploads/2020/04/oed.jpg" alt="Etymonline" draggable="true"
+    id="etymonline"/>
+    <img class="image" src="https://behind-the-scenes.net/wp-content/uploads/wordnik-all-the-words-1024x512.jpg"
+      alt="Wordnik" draggable="true" id="wordnik"/>
+    <img class="image"
+      src="https://raw.githubusercontent.com/Pingumaniac/TheALLDictionaries-Image-Storage/main/WordNet.png"
+      alt="WordNet" draggable="true" id="wordnet"/>
+    <img class="image" src="https://www.synonym.com/static/images/icons/synonym/synonym-icon-fullsize.png"
+      alt="Synonym" draggable="true" id="synonym"/>
+    <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Wikipedia_logo_one_billion_edits_v2.svg"
+      alt="Wikipedia" draggable="true" id="wikipedia"/>
+    <img class="image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/WiktionaryEn_-_DP_Derivative.svg/1200px-WiktionaryEn_-_DP_Derivative.svg.png"
+      alt="Wiktionary" draggable="true" id="wiktionary"/>
+    <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_News_icon.png"
+      alt="Google News" draggable="true" id="news"/>
+    <img class="image" src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png"
+      alt="Google Images" draggable="true" id="images"/>
+    <img class="image" src="https://www.vectorico.com/download/social_media/youtube-red-square.png" alt="YouTube" 
+    draggable="true" id="YouTube"/>
+    <img class="image" src="https://pbs.twimg.com/profile_images/1551094244/eyeball_copy.png" alt="Visuwords" draggable="true"
+    id="Visuwords"/>
+  </div>
+  </div>
+</section>
+
+<!-- Draggable -->
+<script src="{{ url_for('static', filename='assets/js/imageDraggable.js') }}"></script>
+{% endblock %}
