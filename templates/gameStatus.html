@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section class="pt-4 pt-md-11">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <!-- Card -->
+        <div class="card card-bleed border-bottom border-bottom-md-0 shadow-light-lg">
+          <!-- Collapse -->
+          <div class="collapse d-md-block" id="sidenavCollapse">
+            <div class="card-body">
+              <!-- Heading -->
+              <h6 class="fw-bold text-uppercase mb-3">Account</h6>
+
+              <!-- List -->
+              <ul class="card-list list text-gray-700 mb-6">
+                <li class="list-item"><a class="list-link text-reset" href="{{ url_for('mypage') }}">General</a></li>
+                {% if adminStatus != 1 %}
+                <li class="list-item"><a class="list-link text-reset" href="{{ url_for('friends') }}">Friends</a></li>
+                <li class="list-item active">
+                    <a class="list-link text-reset" href="{{ url_for('gameStatus') }}">Game status</a>
+                </li>
+                <li class="list-item">
+                    <a class="list-link text-reset" href="{{ url_for('searchHistories') }}">Search history</a>
+                </li>
+                <li class="list-item">
+                    <a class="list-link text-reset" href="{{ url_for('sourceOrder') }}">Source order</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-9">
+        <!-- Card -->
+        <div class="card card-bleed shadow-light-lg">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <!-- Heading -->
+              <div class="col">
+                <h4 class="mb-0">My game status</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- List group -->
+            <div class="list-group list-group-flush">
+                <div class="list-group-item">
+                    <p class="mb-0">Word typing challenge result
+                        <a style="float: right" href="{{ url_for('resetWordRank') }}">
+                            <button type="button"class="btn btn-outline-danger btn-xs">Reset</button>
+                        </a>
+                    </p>
+                    <br>
+                    {% if userWordRankData != None %}
+                    <!-- Display highest score -->
+                    <p class="small text-gray-700">Your highest score is:
+                      {{ userWordRankData[0] }}</p>
+                    <!-- Display level -->
+                    {% if userWordRankData[0] >= 81 %}
+                    <p class="small text-gray-700">You are enlightened.</p>
+                    {% elif userWordRankData[0] >= 71 %}
+                    <p class="small text-gray-700">You are a grand master.</p>
+                    {% elif userWordRankData[0] >= 61 %}
+                    <p class="small text-gray-700">You are a master.</p>
+                    {% elif userWordRankData[0] >= 51 %}
+                    <p class="small text-gray-700">You are an expert.</p>
+                    {% elif userWordRankData[0] >= 41 %}
+                    <p class="small text-gray-700">You are a professional player.</p>
+                    {% elif userWordRankData[0] >= 31 %}
+                    <p class="small text-gray-700">You are a fast player.</p>
+                    {% elif userWordRankData[0] >= 21 %}
+                    <p class="small text-gray-700">You are an intermediate player.</p>
+                    {% elif userWordRankData[0] >= 11 %}
+                    <p class="small text-gray-700">You are a novice.</p>
+                    {% else %}
+                    <p class="small text-gray-700">You are a beginner.</p>
+                    {% endif %}
+                    <!-- Display ranking -->
+                    {% if userWordRankData[1] == 1 %}
+                    <p class="small text-gray-700">You are in the 1st place.</p>
+                    {% elif userWordRankData[1] == 2 %}
+                    <p class="small text-gray-700">You are in the 2nd place.</p>
+                    {% elif userWordRankData[1] == 3 %}
+                    <p class="small text-gray-700">You are in the 3rd place.</p>
+                    {% else %}
+                    <p class="small text-gray-700">Your are in the {{ userWordRankData[1] }}th place.</p>
+                    {% endif %}
+                    {% else %}
+                    <p class="small text-gray-700">You have not participated in the word typing challenge yet.</p>
+                    {% endif %}
+                  </div>
+    
+                  <div class="list-group-item">
+                    <p class="mb-0">Sentence typing challenge result
+                      <a style="float: right" href="{{ url_for('resetSentenceRank') }}">
+                        <button type="button"class="btn btn-outline-danger btn-xs">Reset</button>
+                      </a>
+                    </p>
+                    <br>
+                    {% if userSentenceRankData != None %}
+                    <!-- Display highest score -->
+                    <p class="small text-gray-700">Your highest score is:
+                      {{ userSentenceRankData[0] }}</p>
+                    <!-- Display level -->
+                    {% if userSentenceRankData[0] >= 81 %}
+                    <p class="small text-gray-700">You are enlightened.</p>
+                    {% elif userSentenceRankData[0] >= 71 %}
+                    <p class="small text-gray-700">You are a grand master.</p>
+                    {% elif userSentenceRankData[0] >= 61 %}
+                    <p class="small text-gray-700">You are a master.</p>
+                    {% elif userSentenceRankData[0] >= 51 %}
+                    <p class="small text-gray-700">You are an expert.</p>
+                    {% elif userSentenceRankData[0] >= 41 %}
+                    <p class="small text-gray-700">You are a professional player.</p>
+                    {% elif userSentenceRankData[0] >= 31 %}
+                    <p class="small text-gray-700">You are a fast player.</p>
+                    {% elif userSentenceRankData[0] >= 21 %}
+                    <p class="small text-gray-700">You are an intermediate player.</p>
+                    {% elif userSentenceRankData[0] >= 11 %}
+                    <p class="small text-gray-700">You are a novice.</p>
+                    {% else %}
+                    <p class="small text-gray-700">You are a beginner.</p>
+                    {% endif %}
+                    <!-- Display ranking -->
+                    {% if userSentenceRankData[1] == 1 %}
+                    <p class="small text-gray-700">You are in the 1st place.</p>
+                    {% elif userSentenceRankData[1] == 2 %}
+                    <p class="small text-gray-700">You are in the 2nd place.</p>
+                    {% elif userSentenceRankData[1] == 3 %}
+                    <p class="small text-gray-700">You are in the 3rd place.</p>
+                    {% else %}
+                    <p class="small text-gray-700">Your are in the {{ userSentenceRankData[1] }}th place.</p>
+                    {% endif %}
+                    {% else %}
+                    <p class="small text-gray-700">You have not participated in the sentence typing challenge yet.</p>
+                    {% endif %}
+                  </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <p class="text-center mb-0">
+          <br />
+          <small class="text-muted">If you no longer want to use The ALL Dictionary, you can
+            <a class="text-danger" href="{{ url_for('deleteAccount') }}">delete your account</a>.
+          </small>
+        </p>
+
+        <!-- / .row -->
+      </div>
+</section>
+{% endblock %}

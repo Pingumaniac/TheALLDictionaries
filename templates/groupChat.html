@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+  <br>
+  <br>
+  <h1>Let's chat!</h1>
+  <br>
+</div>
+<div class="container">
+  <div class="list-group">
+    <div class="list-group-item" id="groupChatList"
+      style="max-height:500px; overflow:auto; display: flex; flex-direction: column-reverse;">
+      {% if messageTable == () %}
+      <p>No message sent so far.</p>
+      {% else %}
+      {% for messageData in messageTable %}
+      <p>
+        <!--
+            {% if messageData[4] != None %}
+            <div class="avatar avatar-xl">
+              <img class="avatar-img rounded-circle" src="{{ messageData[4] }}" alt="..."/>
+            </div>
+            {% else %}
+            <div class="avatar avatar-xl">
+              <img class="avatar-img rounded-circle" src="https://i.stack.imgur.com/34AD2.jpg" alt="..."/>
+            </div>
+            {% endif %}
+            -->
+        {% if messageData[4] != None %}
+        <a href="{{messageData[4]}}" target="_blank"><strong>{{messageData[3]}}</strong></a>
+        {% else %}
+        <strong>{{messageData[3]}}</strong>
+        {% endif %}
+        <span class="small text-truncate text-gray-700">({{messageData[0]}}, {{messageData[2]}})</span>
+        <strong>:</strong>
+        {{messageData[1]}}
+      </p>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div class="input-group mb-3 searchBox">
+      <input type="text" class="form-control" placeholder="Type a message..." id="chatMessageBox"
+        name="chatMessageBox" />
+      <button class="btn btn-outline-secondary" type="submit" id="send">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="{{ url_for('static', filename='assets/js/groupChat.js') }}"></script>
+{%endblock%}
