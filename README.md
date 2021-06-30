@@ -44,7 +44,7 @@ The target audience of TheALLDictionary is someone who wants to search for the d
 
 1. JavaScript (ECMAScript 2020)
 2. MySQL (MySQL Community Edition 8.0.24)
-3. Python (3.8.10)
+3. Python (3.8.11)
 
 ### Frameworks used
 
