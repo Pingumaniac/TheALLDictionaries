@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+{% block content %}
+  <!-- Page Content -->
+  <section class="pt-4 pt-md-11">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form method="post" action="{{ url_for('searchResult') }}">
+            <div class="input-group mb-3 searchBox">
+              <input type="text" class="form-control" placeholder="Search" aria-label="search" id="word" name="word"
+                aria-describedby="button-addon2" style="border-color:#506690"/>
+              <button class="btn btn-outline-secondary" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="row" style="margin-left: 2px">
+        <div class="list-group">
+
+          {% for sourceOrder in sourceOrderList %}
+
+          {% if sourceOrder == "mwl" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="mwl">
+            <a href="https://learnersdictionary.com/" target="_blank">
+              <h2 class="mb-1">Merriam Webster's Learner's Dictionary</h2>
+            </a>
+            <p class="mb-1 d-flex w-100 justify-content-between">Short definitions:</p>
+            <ol id = "mwlList">
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "mwc" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="mwc">
+            <a href="https://www.merriam-webster.com/" target="_blank"><h2 class="mb-1">Merriam Webster Dictionary</h2></a>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">Short definitions:</p>
+            <ol id = "mwcList">
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "oxford" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="oxford">
+            <a href="https://www.oed.com/" target="_blank"><h2 class="mb-1">Oxford Engish Dictionary</h2></a>
+            <br>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "free" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="free">
+            <a href="https://www.thefreedictionary.com/" target="_blank"><h2 class="mb-1">The Free Dictionary</h2></a>
+            <br>
+            <a href={{thefreedictionary}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for
+                viewing the results from The Free Dictionary.</button></a>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "yourdictionary" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="yourdictionary">
+            <a href="https://www.yourdictionary.com" target="_blank"><h2 class="mb-1">Your Dictionary</h2></a>
+            <br>
+            <a href={{yourdictURL}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for viewing the
+                results from Your Dictionary.</button></a>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "urban" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="urban">
+            <a href="https://www.urbandictionary.com/" target="_blank"><h2 class="mb-1">Urban Dictionary</h2></a>
+            <br>
+            <p class="mb-1">Definitions:</p>
+            <ol>
+              {% if "no definition founded" in urbanDefinitions %}
+              <li> {{ urbanDefinitions }} </li>
+              {% else %}
+              {% for urbanDefinition in urbanDefinitions %}
+              <li>{{ urbanDefinition }}</li>
+              {% endfor %}
+              {% endif %}
+            </ol>
+            <!-- The examples are outputted in too strange manner. Will instead show the link only to access the examples
+              <p class="mb-1">Examples:</p>
+              <ul>
+                {% if "no example founded" in urbanExamples %}
+                  <li> {{ urbanExamples }} </li>
+                {% else %}
+                  {% for urbanExample in urbanExamples %}
+                    <li>{{ urbanExamples }}</li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            -->
+            <br>
+            <a href={{urbanLink}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for viewing the
+                results from Urban Dictionary.</button></a>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "etymonline" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="etymonline">
+            <a href="https://www.etymonline.com/" target="_blank"><h2 class="mb-1">Etymonline</h2></a>
+            <br>
+            <p>
+              <a href={{etymonline}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for viewing the
+                  full results from Etymonline</button></a>
+            </p>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "wordnik" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="wordnik">
+            <a href="https://www.wordnik.com" target="_blank"><h2 class="mb-1">Wordnik</h2></a>
+            <br>
+            <a href={{wordnikURL}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for viewing the
+                results from Wordnik.</button></a>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "wordnet" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="wordnet">
+            <a href="https://wordnet.princeton.edu/" target="_blank"><h2 class="mb-1">WordNet</h2></a>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">Part of speech:</p>
+            <ol>
+              {% for wordnetOutput in wordnetOutputs %}
+              <li>{{ wordnetOutput[0] }}</li>
+              {% endfor %}
+            </ol>
+            <p class="mb-1 d-flex w-100 justify-content-between">Definitions:</p>
+            <ol>
+              {% for wordnetOutput in wordnetOutputs %}
+              <li>{{ wordnetOutput[1] }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "synonym" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="synonym">
+            <a href="https://www.synonym.com/" target="_blank"><h2 class="mb-1">Synonym.com</h2></a>
+            <br>
+            <h3><u>Synonyms</u></h3>
+            <br>
+            <ol>
+              {% for synonym in synonyms %}
+              {% if "no synonym found" not in synonym %}
+              <a href="{{ url_for('searchWordResult', word = synonym) }}" target="_blank"><li>{{ synonym }}</li></a>
+              {% else %}
+              <li>{{ synonym }}</li>
+              {% endif %}
+              {% endfor %}
+            </ol>
+            <h3><u>Antonyms</u></h3>
+            <br>
+            <ol>
+              {% for antonym in antonyms %}
+              {% if "no antonym" not in antonym %}
+              <a href="{{ url_for('searchWordResult', word = antonym) }}" target="_blank"><li>{{ antonym }}</li></a>
+              {% else %}
+              <li>{{ antonym }}</li>
+              {% endif %}
+              {% endfor %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "wikipedia" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="wikipedia">
+            <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank"><h2 class="mb-1">Wikipedia</h2></a>
+            <br>
+            <h3>Title: {{wikiTitle}}</h3>
+            <br>
+            <h3><u>Summary</u></h3>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">{{wikiSummary}}</p>
+            <br>
+            <a href={{wikiURL}}><button class="btn btn-xs btn-outline-primary">Link for viewing the corresponding
+                Wikipedia article.</button></a>
+            <br>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "wiktionary" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="wiktionary">
+            <a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page" target="_blank"><h2 class="mb-1">Wiktionary</h2></a>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">{{ wiktionaryDefinitions }}</p>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">Part of speech: {{wiktionaryPartOfSpeech}}</p>
+            <br>
+            <p class="mb-1 d-flex w-100 justify-content-between">Examples:</p>
+            <ol>
+              {% if "is not found" in wiktionaryExamples %}
+              <li>{{ wiktionaryExamples }}</li>
+              {% else %}
+              {% for wiktionaryExample in wiktionaryExamples %}
+              <li>{{ wiktionaryExample }}</li>
+              {% endfor %}
+              {% endif %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "news" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="news">
+            <a href="https://news.google.com/" target="_blank"><h2 class="mb-1">Google News</h2></a>
+            <br>
+            <ol>
+              {% if googleNews != None %}
+              {% for news in googleNews %}
+              <br>
+              <a href={{news[1]}} target="_blank">
+                <li>Title: {{ news[0] }}</li>
+                <p>Description: {{ news[2] }}</p>
+                <p>Source: {{ news[4] }}</p>
+              </a>
+              <a href="{{ news [3]}}"><img src="{{ news [3]}}" width="15%" , height="auto"></a>
+              <br>
+              <br>
+              {% endfor %}
+              {% else %}
+              <br>
+              <li>No such news found.</li>
+              {% endif %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "images" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="images">
+            <a href="https://www.google.com/imghp?hl=en" target="_blank"><h2 class="mb-1">Google Images</h2></a>
+            <br>
+            <ol>
+              {% if 'No such image found' in googleImages[1] %}
+              <li>No such image found.</li>
+              {% else %}
+              {% for googleImage in googleImages %}
+              <li>
+                <a href="{{googleImage[2]}}" target="_blank"><p>{{googleImage[1]}}</p></a>
+                <a href="{{googleImage[0]}}"><img src="{{googleImage[0]}}" width="50%" , height="auto"></a>
+              </li>
+              <br>
+              <br/>
+              {% endfor %}
+              {% endif %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "youtube" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="youtube">
+            <a href="https://www.youtube.com/" target="_blank"><h2 class="mb-1">YouTube</h2></a>
+            <br>
+            <ol>
+              {% if "No results found" in youtubeResults[0] %}
+              <li>No results found in YouTube.</li>
+              {% else %}
+              {% for youtubeResult in youtubeResults %}
+              <a href="{{youtubeResult[1]}}" target="_blank"><li>{{youtubeResult[0]}}</li></a>
+              <!-- I somehow cannot fix the page not found bug when I change the link from watch?=v to embed/
+                <iframe width="50%" height="auto" src="{{youtubeResult[2]}}"></iframe>
+              -->
+              {% endfor %}
+              {% endif %}
+            </ol>
+          </div>
+          {% endif %}
+
+          {% if sourceOrder == "visuwords" %}
+          <div class="list-group-item" aria-current="true" draggable="true" id="visuwords">
+            <a href="https://visuwords.com" target="_blank"><h2 class="mb-1">Visuwords</h2></a>
+            <br>
+            <a href={{visuwordsURL}} target="_blank"><button class="btn btn-xs btn-outline-primary">Link for viewing the
+                results from Visuwords.</button></a>
+          </div>
+          {% endif %}
+
+          {% endfor %}
+
+        </div>
+      </div>
+      {% if adminStatus == 0 %}
+      <div class="container text-center">
+        <br>
+        <br>
+        <a href="{{ url_for('changeDictionaryOrder') }}">
+          <button class="btn btn-outline-secondary btn-sm" type="button">Edit Source Order</button>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+<!-- Javascript-->
+<script type="text/javascript">
+  const WORD_INPUT = '{{word}}';
+</script> 
+<script src="{{ url_for('static', filename='assets/js/mwlSearchResult.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/mwcSearchResult.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/oxfordSearchResult.js') }}"></script>
+<!-- Draggable -->
+<script src="{{ url_for('static', filename='assets/js/makeDraggable.js') }}"></script>
+{% endblock %}
