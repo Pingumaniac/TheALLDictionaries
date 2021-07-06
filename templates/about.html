@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+    <br />
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>About TheALLDictionaries</h1>
+            <br>
+            <h4>Spring 2021 CSE 416 final project at the State University of New York Korea (SUNY Korea).</h4>
+            <br>
+            <h4>Note that the team has been splitted into two separate teams after project milestone 2.</h4>
+            <br>
+        </div>
+    </div>
+
+    <div class="list-group">
+        <div class="list-group-item" draggable="true">
+            <h2>About Members and Roles</h2>
+            <br>
+            <h4>Name: Young-jae (Bush) Moon</h4>
+            <ul>
+                <li>Roles: Product owner, Project manager, Lead programmer and Designer</li>
+                <li>Email: youngjae.moon@stonybrook.edu</li>
+            </ul>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>Past Members and Roles</h2>
+            <br>
+            <h4>Name: Yoo-ra Kim</h4>
+            <ul>
+                <li>Roles: Lead programmer</li>
+                <li>Email: yoora.kim@stonybrook.edu</li>
+            </ul>
+            <br>
+            <h4>Name: Seung-jae Kang</h4>
+            <ul>
+                <li>Roles: Designer</li>
+                <li>Email: seungjae.kang@stonybrook.edu</li>
+            </ul>
+            <br>
+            <h4>Name: Seo-young Ko</h4>
+            <ul>
+                <li>Roles: Designer</li>
+                <li>Email: seoyoung.ko@stonybrook.edu</li>
+            </ul>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>Advisor</h2>
+            <br>
+            <h4>Name: Professor Alexander Kuhn</h4>
+            <ul>
+                <li>Teaching Assistant Professor in Computer Science at the State University of New York Korea (SUNY
+                    Korea).</li>
+            </ul>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>What problem does TheALLDictionaries aim to solve?</h2>
+            <br>
+            <ul>
+                <li>When people do not know an English word, they have to search its definition from a dictionary. </li>
+                <li>Although they may be satisfied with the meanings and the example sentences given from the
+                    dictionary, they may also be dissatisfied when they cannot fully grasp the word after reading the
+                    dictionary’s explanations. </li>
+                <li>In this case, they then have to search its meaning through other dictionaries, encyclopedias or
+                    search relevant photos or videos from Google or YouTube for full understandings.</li>
+            </ul>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>How does TheALLDictionaries trying to solve this problem?</h2>
+            <br>
+            <h4 style="text-indent: 50px;">“TheALLDictionary” is a web-based application that helps people to search the meanings of the term from the
+                following 16 different sources at once:</h4>
+            <ol>
+                <li>Merriam-Webster’s Learner’s dictionary</li>
+                <li>Merriam-Webster dictionary</li>
+                <li>Oxford English Dictionary</li>
+                <li>The Free Dictionary</li>
+                <li>Your Dictionary</li>
+                <li>Urban dictionary</li>
+                <li>Etymonline</li>
+                <li>Wordnik</li>
+                <li>WordNet</li>
+                <li>synonym.com</li>
+                <li>Wiktionary</li>
+                <li>Wikipedia</li>
+                <li>Google News</li>
+                <li>Google Images</li>
+                <li>YouTube</li>
+                <li>Visuwords</li>
+            </ol>
+            <br>
+            <p style="text-indent: 50px;">Here Merriam-Webster’s Learner’s is the easiest dictionary in which the terms are explained in most simple
+                and plain English. By contrast, the Merriam-Webster dictionary explains the terms at the intermediate level,
+                and the Oxford English Dictionary explains them at more advanced levels. Thus, the Urban dictionary is
+                especially useful for finding the definitions of slang words. Hence the user can find the explanations of
+                the term at various levels from each dictionary. Thus, if a dictionary is not sufficient to understand the
+                meaning of the word, then the user can refer to Wikipedia, Google News, Google Images and YouTube videos to
+                understand more thoroughly.</p>
+
+            <p style="text-indent: 50px;">The target audience of TheALLDictionary is someone who wants to search for the definition of an English
+                word. Nonetheless, it is expected that students who learn English at school will use this application most
+                frequently. Therefore, TheALLDictionary will include various typing challenges that will help them to
+                memorise the new vocabularies and practice writing exemplar sentences, paragraphs and texts. Thus, by typing
+                exemplar sentences, paragraphs and texts, they will be able to improve their grammar.</p>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>Tools and technologies</h2>
+            <br>
+            <h3>Programming languages and Database Management System (DBMS) used</h3>
+            <ol>
+                <li>JavaScript (ECMAScript 2020)</li>
+                <li>MySQL (MySQL Community Edition 8.0.24)</li>
+                <li>Python (3.8.11)</li>
+            </ol>
+            <br>
+            <h3>Frameworks used</h3>
+            <ol>
+                <li>Bootstrap front-end framework (v5.0.0-beta 3)</li>
+                <li>Flask framework (v1.1.2)</li>
+                <li>jQuery (v3.6.0)</li>
+            </ol>
+            <br>
+            <h3>Libraries used</h3>
+            <ol>
+                <li>WerkZeug (1.0.1)</li>
+            </ol>
+            <br>
+            <h3>Application Programming Interfaces (API) used</h3>
+            <ol>
+                <li>Custom Search JSON API (v1)</li>
+                <li>Merriam-Webster's Learner's Dictionary with Audio (v3)</li>
+                <li>Merriam-Webster's Collegiate® Dictionary with Audio (v3)</li>
+                <li>Oxford Dictionaries API (v2.5)</li>
+            </ol>
+            <br>
+            <h3>External Storage used</h3>
+            <ol>
+                <li>Amazon Relational Database Service (RDS)</li>
+                <li>GitHub</li>
+            </ol>
+            <br>
+            <h3>3rd party packages used</h3>
+            <ol>
+                <li>beautifulsoup4 (4.9.3)</li>
+                <li>Flask-Bootstrap (3.3.7.1)</li>
+                <li>GoogleNews (1.5.7)</li>
+                <li>gunicorn (20.1.0)</li>
+                <li>PyDictionary (2.0.1)</li>
+                <li>PyMySQL (1.0.2)</li>
+                <li>requests (2.25.1)</li>
+                <li>udpy (2.0.0)</li>
+                <li>Wikipedia-API (0.5.4)</li>
+                <li>wiktionaryparser (0.0.97)</li>
+                <li>youtube-search-python (1.4.3)</li>
+            </ol>
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>How it Works?</h2>
+            <br>
+            <img src="https://raw.githubusercontent.com/Pingumaniac/TheALLDictionaries-Image-Storage/main/MWC%20diagram.jpeg" height="401" width="959">
+        </div>
+        <div class="list-group-item" draggable="true">
+            <h2>Bug tracking</h2>
+            <br>
+            <h4>All users can view and report a bug in "GitHub Issues" of <a href="https://github.com/Pingumaniac/TheALLDictionaries/issues">our repository</a>.</h4>
+        </div>
+    </div>
+</div>
+<!-- Draggable -->
+<script src="{{ url_for('static', filename='assets/js/makeDraggable.js') }}"></script>
+{%endblock%}
