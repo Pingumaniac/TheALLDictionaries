@@ -34,7 +34,25 @@ When people do not know an English word, they have to search its definition from
 
 ## Solution 
 
-“TheALLDictionary” is a web-based application that helps people to search the meanings of the term from Merriam-Webster’s Learner’s dictionary, Merriam-Webster dictionary, Oxford English Dictionary, The Free Dictionary, Your Dictionary, Urban dictionary, Etymonline, Wordnik WordNet, synonym.com, Wiktionary, Wikipedia, Google News, Google Images, YouTube, Visuwords at once. Here Merriam-Webster’s Learner’s is the easiest dictionary in which the terms are explained in most simple and plain English. By contrast, the Merriam-Webster dictionary explains the terms at the intermediate level, and the Oxford English Dictionary explains them at more advanced levels. Thus, the Urban dictionary is especially useful for finding the definitions of slang words. Hence the user can find the explanations of the term at various levels from each dictionary. Thus, if a dictionary is not sufficient to understand the meaning of the word, then the user can refer to Wikipedia, Google News, Google Images and YouTube videos to understand more thoroughly.
+“TheALLDictionary” is a web-based application that helps people to search the meanings of the term from the following 16 different sources at once: 
+1. Merriam-Webster’s Learner’s dictionary
+2. Merriam-Webster dictionary
+3. Oxford English Dictionary
+4. The Free Dictionary
+5. Your Dictionary
+6. Urban dictionary
+7. Etymonline
+8. Wordnik 
+9. WordNet
+10. synonym.com
+11. Wiktionary
+12. Wikipedia
+13. Google News
+14. Google Images
+15. YouTube
+16. Visuwords. 
+
+Here Merriam-Webster’s Learner’s is the easiest dictionary in which the terms are explained in most simple and plain English. By contrast, the Merriam-Webster dictionary explains the terms at the intermediate level, and the Oxford English Dictionary explains them at more advanced levels. Thus, the Urban dictionary is especially useful for finding the definitions of slang words. Hence the user can find the explanations of the term at various levels from each dictionary. Thus, if a dictionary is not sufficient to understand the meaning of the word, then the user can refer to Wikipedia, Google News, Google Images and YouTube videos to understand more thoroughly.
 
 The target audience of TheALLDictionary is someone who wants to search for the definition of an English word. Nonetheless, it is expected that students who learn English at school will use this application most frequently. Therefore, TheALLDictionary will include various typing challenges that will help them to memorise the new vocabularies and practice writing exemplar sentences, paragraphs and texts. Thus, by typing exemplar sentences, paragraphs and texts, they will be able to improve their grammar.
 
