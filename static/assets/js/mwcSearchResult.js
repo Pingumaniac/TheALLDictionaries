@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function mwcNotFound() {
         var html = "<li>The short definition of, '" + WORD_INPUT + ",' is not found on Merriam Webster Dictionary.</li>";
-        $("#mwlList").append(html);
+        $("#mwcList").append(html);
     }
 
     function mwcPolling() {
