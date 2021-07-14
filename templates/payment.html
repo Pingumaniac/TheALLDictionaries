@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="pt-4 pt-md-11">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-12 col-md-5">
+        <div class="card card-bleed shadow-light-lg">
+          <div class="card-body">
+            <!-- Preheading -->
+            <div class="text-center mb-3">
+              <span class="badge rounded-pill bg-primary-soft"><span class="h6 text-uppercase">Premium</span></span>
+            </div>
+
+            <!-- Price -->
+            <div class="d-flex justify-content-center">
+              <span class="h2 mb-0 mt-2">$</span>
+              <span class="price display-2 mb-0">0</span>
+              <span class="h2 align-self-end mb-1">/month</span>
+            </div>
+            <br />
+            <!-- List -->
+            <div class="d-flex">
+              <!-- Badge -->
+              <div class="badge badge-rounded-circle bg-success-soft mt-1 me-4"><i class="fe fe-check"></i></div>
+
+              <!-- Text -->
+              <p>More variety in the type of games.</p>
+            </div>
+            <div class="d-flex">
+              <!-- Badge -->
+              <div class="badge badge-rounded-circle bg-success-soft mt-1 me-4"><i class="fe fe-check"></i></div>
+
+              <!-- Text -->
+              <p>Can create live typing challenges.</p>
+            </div>
+            <div class="d-flex">
+              <!-- Badge -->
+              <div class="badge badge-rounded-circle bg-success-soft mt-1 me-4">
+                <i class="fe fe-check"></i>
+              </div>
+
+              <!-- Text -->
+              <p>Can participate in live typing challenges.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-7">
+        <!-- Card -->
+        <div class="card card-bleed shadow-light-lg mb-6">
+          <div class="card-header">
+            <!-- Heading -->
+            <h4 class="mb-0">Payment Information</h4>
+          </div>
+          <div class="card-body">
+            <!-- List group -->
+            <form>
+              <!-- Name -->
+              <div class="form-group">
+                <label class="form-label" for="modalPaymentName">Full Name</label>
+                <input class="form-control" id="modalPaymentName" type="text" placeholder="First Last" />
+              </div>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label class="form-label" for="modalPaymentNumbber">Card number</label>
+                <input class="form-control" id="modalPaymentNumbber" type="cardNumber"
+                  placeholder="XXXX XXXX XXXX XXXX" />
+              </div>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label class="form-label" for="modalPaymentDate">Expiration Date</label>
+                <input class="form-control" id="modalPaymentDate" type="month" placeholder="03/2023" />
+              </div>
+
+              <!-- Submit -->
+              <button class="btn w-100 btn-outline-primary mt-3 lift" onclick="paymentTBA()">Pay for the
+                premium...</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <p class="text-center mb-0">
+          <small class="text-muted">If you no longer want to use TheALLDictionary, you can
+            <a class="text-danger" href="{{ url_for('my_pages.deleteAccount') }}">delete your account</a>.
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function paymentTBA() {
+    alert("Sorry. The premium features have not been introduced yet");
+  }
+</script>
+{% endblock %}
