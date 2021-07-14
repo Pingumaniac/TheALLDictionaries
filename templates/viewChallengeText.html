@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <br>
+      <br>
+      <h1>View the challenge text</h1>
+      <h4>Note that you cannot edit the text for the typing challenge to keep it fair.</h4>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div>
+    <div class="list-group">
+      <div class="list-group-item">
+        <p id='text'> {{ challengeText[0] }}</p>
+        <hr>
+        <h5>Characters (with spaces):
+          <span class="currentCharacterCount" name="currentCharacterCount" id="currentCharacterCount"></span>
+        </h5>
+      </div>
+    </div>
+    <br>
+    <div class="control" style="text-align: center">
+      <a href="{{ url_for('game_pages.viewTextChallenge') }}"><input class="btn btn-primary" type="button" value="Go back" /></a>
+    </div>
+  </div>
+</div>
+<!-- Javascript -->
+<script src="{{ url_for('static', filename='assets/js/viewChallengeText.js') }}"></script>
+{% endblock %}

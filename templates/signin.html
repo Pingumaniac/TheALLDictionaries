@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section>
+  <div class="container d-flex flex-column">
+    <div class="row align-items-center justify-content-center gx-0 min-vh-100">
+      <div class="col-12 col-md-5 col-lg-4 py-8 py-md-11">
+        <!-- Heading -->
+        <h1 class="mb-0 fw-bold text-center">Sign in</h1>
+
+        <!-- Text -->
+        <p class="mb-6 text-center text-muted">Use The ALL Dictionary</p>
+
+        <!-- Form -->
+        <form class="mb-6" , method="POST" , action="{{ url_for('signin') }}">
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="id"> Your userID </label>
+            <input type="userID" class="form-control" name="userID" id="userID" placeholder="Enter your userID" />
+          </div>
+
+          <!-- Password -->
+          <div class="form-group mb-5">
+            <label class="form-label" for="password"> Password </label>
+            <input type="password" class="form-control" id="password" name="password"
+              placeholder="Enter your password" />
+          </div>
+
+          <!-- Submit -->
+          <button class="btn w-100 btn-primary" type="submit">
+            Sign in
+          </button>
+        </form>
+
+        <!-- Text -->
+        <p class="mb-0 fs-sm text-center text-muted">
+          Don't have an account yet? <a href="{{ url_for('signup') }}">Sign up</a>
+        </p>
+      </div>
+    </div>
+    <!-- / .row -->
+  </div>
+  <!-- / .container -->
+</section>
+{%endblock%}

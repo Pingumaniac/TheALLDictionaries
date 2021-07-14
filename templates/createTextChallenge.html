@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section class="pt-4 pt-md-1">
+  <div class="container">
+    <br />
+    <div class="row text-center">
+      <div class="col-md-12">
+        <br>
+        <h1>Create text typing challenge</h1>
+        <br>
+      </div>
+    </div>
+    <div class="list-group" id="formTitle">
+      <!-- Form -->
+      <form class="mb-6" method="post" , action="{{ url_for('game_pages.createTextChallenge') }}">
+        <div class="list-group-item">
+          <label class="form-label" for="text">
+            <h3>Challenge title (255 characters maximum and shall be unique)</h3>
+          </label>
+          <br>
+          <br>
+          <input type="text" class="form-control" name="title" id="title"
+            placeholder="Enter the title of the challenge here. The title of the text is recommended." />
+          <br>
+          <h5>Characters (with spaces):
+            <span class="titleCharacterCount" name="titleCharacterCount" id="titleCharacterCount"></span>
+          </h5>
+        </div>
+        <div class="list-group-item" id="formType">
+          <label class="form-label" for="textType">
+            <h3>Type of text</h3>
+          </label>
+          <br>
+          <br>
+          <select id="textType" name="textType" class="form-select" aria-label="Default select example">
+            <option disabled>Please open this select menu</option>
+            <option value="literature">Literature</option>
+            <option value="speech">Speech</option>
+            <option value="law">Law</option>
+            <option value="articles">Articles</option>
+            <option value="essays">Exemplar essays</option>
+          </select>
+        </div>
+        <div class="list-group-item" id="formText">
+          <label class="form-label" for="text">
+            <h3>Text</h3>
+          </label>
+          <br>
+          <br>
+          <textarea class="form-control" id="text" name="text" type="text" rows="10"
+            placeholder="Enter the text here"></textarea>
+          <br>
+          <h5>Characters (with spaces):
+            <span class="currentCharacterCount" name="currentCharacterCount" id="currentCharacterCount"></span>
+          </h5>
+        </div>
+    </div>
+    <div class="form-group mb-5 text-center">
+      <!-- Submit -->
+      <button class="btn btn-outline-secondary btn-sm" type="submit"> Submit </button>
+    </div>
+    </form>
+  </div>
+  </div>
+</section>
+<!-- Javascript -->
+<script src="{{ url_for('static', filename='assets/js/createTextChallenge.js') }}"></script>
+{%endblock%}
