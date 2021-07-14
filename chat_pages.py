@@ -1,6 +1,5 @@
 from flask import Flask, Blueprint, g, render_template, request, redirect, url_for, session, jsonify, flash, escape
 from flask_bootstrap import Bootstrap
-from werkzeug.security import generate_password_hash, check_password_hash
 import pymysql
 from python.thealldictionariesAPI import DB
 import json
