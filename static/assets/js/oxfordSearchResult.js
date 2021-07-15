@@ -67,7 +67,6 @@ $(document).ready(function () {
                     if (audioFile != "Not found") {
                         var audioFileHTML = '<p class="mb-1 d-flex w-100 justify-content-between">';
                         audioFileHTML += '<audio controls><source src=' + audioFile + ' type="audio/mpeg"></audio></p><br>';
-                        console.log(audioFile);
                         $("#oxford").append(audioFileHTML);
                     }
 
@@ -91,7 +90,6 @@ $(document).ready(function () {
                                 exampleHTML = "<li>No example found.</li><br>";
                             }
                             else {
-                                console.log(exampleData);
                                 exampleHTML += '<li>' + exampleData + '</li>';
                             }
                         }
