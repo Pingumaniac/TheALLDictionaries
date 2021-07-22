@@ -167,7 +167,7 @@ pip3 install youtube-search-python
   ```
  heroku login
  ```
-5. Use Procfice, requirements.txt and runtime.text given in the file.
+5. Use Procfile, requirements.txt and runtime.text given in the file.
 6. Go to Heroku website again and create an application (name: thealldictionaries).
 7. Clone the repository using Git.  
  ```
